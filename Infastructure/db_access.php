@@ -38,7 +38,7 @@ class db_access{
 	{
 		$this->connect();
 		$this->query_id = mysql_query( $query,$this->link_id );
-		$this->Row = 0;
+		$this->row = 0;
 		if( !$this->query_id )
 			$this->throwError( "Invalid SQL: ".$query);
 		return $this->query_id;

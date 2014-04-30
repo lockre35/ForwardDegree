@@ -1,5 +1,5 @@
 <?php 
-include '../Infastructure/db_access.php';
+//include '../Infastructure/db_access.php';
 include '../Views/login_view.php';
  
 if(isset($_POST['submit-login'])) { 
@@ -7,10 +7,11 @@ if(isset($_POST['submit-login'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	if(validate_credentials($username,$password)!=0){
-		//Set session variable and direct to index
-		echo("User exists");
+		//go back to home
+		header("Location: ../Views/home.php");
 	}else{
-		echo("Username of password incorrect.  Please try again");
+		$error = "Username or password incorrect.  Please try again";
+		echo "<script type='text/javascript'>alert('$error');</script>";
 	}
 }
 ?>
