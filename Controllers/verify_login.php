@@ -9,9 +9,6 @@
 			$_SESSION['user_email']=$user->email;
 			$_SESSION['user_firstName']=$user->firstName;
 			$_SESSION['user_isAdmin']=$user->isAdmin;
-			/*echo $user->email;
-			echo $user->firstName;
-			echo $user->isAdmin;*/
 		}
 		return $result;
 	}

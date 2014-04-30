@@ -10,6 +10,9 @@ function display_nav($int){
 	if (isset($_SESSION['user_email']))
 	{
 		$logOpt = '<li><a href="../Controllers/logout.php">Log Out</a></li>';
+		if ($_SESSION['user_isAdmin']==1){
+			$adminOpt= '<li><a href="../Controllers/manageCourses.php">Manage Courses</a></li>';
+		}
 	}else{
 		$logOpt = '<li><a href="../Controllers/login.php">Log In</a></li>';
 		$regOpt = '<li><a href="../Controllers/register.php">Register</a></li>';
@@ -39,13 +42,14 @@ return <<<HTML
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li {$home}><a href="../Views/home.php">Home</a>
+            <li {$home}><a href="../Views/home.php">Schedule Courses</a>
 			</li>
             <li {$about}><a href="../Views/about.php">About</a></li>
           </ul>
 		  <ul class="nav navbar-nav navbar-right">
             <li {$login}><a href="Controllers/login.php" data-toggle="dropdown">Account</a>
 				<ul class="dropdown-menu">
+					{$adminOpt}
 					{$regOpt}
 					{$logOpt}
 				</ul>
