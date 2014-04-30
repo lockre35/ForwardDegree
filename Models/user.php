@@ -23,5 +23,21 @@ class user{
 		
 		return $db->numRows();
 	}
+	
+	function set($firstname,$lastname,$username,$password){
+		require_once('../Infastructure/db_access.php');
+		$db = new db_access();
+		$sql = "Insert into tbl_user (FirstName, LastName, Email, Password) values ('$firstname','$lastname','$username','$password')";
+		$db->query($sql);
+		$sql = "Select * from tbl_user where Email='$username'";
+		$db->query($sql);
+
+		if($db->numRows()==1){
+			$this->firstName=$firstname;
+			$this->email=$username;
+			$this->admin=0;
+		}
+		return $db->numRows();
+	}
 }
 ?>

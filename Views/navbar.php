@@ -1,21 +1,23 @@
 <?php
 	
 function display_nav($int){
-	$home='class="dropdown"';
+	$home=' ';
 	$about=' ';
 	$contact=' ';
 	$login='class="dropdown"';
+	$regOpt='';
 	session_start();
 	if (isset($_SESSION['user_email']))
 	{
-		$logOpt = '<li><a href="../Controllers/login.php">Log Out</a></li>';
+		$logOpt = '<li><a href="../Controllers/logout.php">Log Out</a></li>';
 	}else{
 		$logOpt = '<li><a href="../Controllers/login.php">Log In</a></li>';
+		$regOpt = '<li><a href="../Controllers/register.php">Register</a></li>';
 	}
 	//Conditional to check if user stored
 	$log_option='Sign In';
 	if($int==0){
-		$home='class="active dropdown"';
+		$home='class="active"';
 	}else if($int==1){
 		$about='class="active"';
 	}else if($int==2){
@@ -37,19 +39,14 @@ return <<<HTML
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li {$home}><a href="../Views/home.php" data-toggle="dropdown">Home</a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-				</ul>
+            <li {$home}><a href="../Views/home.php">Home</a>
 			</li>
             <li {$about}><a href="../Views/about.php">About</a></li>
-            <li {$contact}><a href="../Views/contact.php">Contact</a></li>
           </ul>
 		  <ul class="nav navbar-nav navbar-right">
             <li {$login}><a href="Controllers/login.php" data-toggle="dropdown">Account</a>
 				<ul class="dropdown-menu">
-					<li><a href="#">Action1</a></li>
-					<li><a href="#">Action2</a></li>
+					{$regOpt}
 					{$logOpt}
 				</ul>
 			</li>

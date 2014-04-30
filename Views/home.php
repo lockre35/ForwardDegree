@@ -6,9 +6,9 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Header</h1>
+        <h1>Forward Degree</h1>
 		<?php //include 'Views/login_view.php'?>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <p class="lead">This is the future home of a course seating application.<br> Currently, only Log In and Register modules work.</p>
       </div>
 
     </div><!-- /.container -->

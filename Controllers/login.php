@@ -1,5 +1,4 @@
 <?php 
-//include '../Infastructure/db_access.php';
 include '../Views/login_view.php';
  
 if(isset($_POST['submit-login'])) { 
