@@ -42,7 +42,7 @@ return <<<HTML
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li {$home}><a href="../Views/home.php">Schedule Courses</a>
+            <li {$home}><a href="../Views/home.php">View Courses</a>
 			</li>
             <li {$about}><a href="../Views/about.php">About</a></li>
           </ul>
