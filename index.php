@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
  /*** error reporting on ***/
@@ -23,3 +24,7 @@
  $registry->router->loader();
 
 ?>
+=======
+<?php header("Location: ./Views/home.php")?>
+
+>>>>>>> 0302beda478c3d6c4d945b53b2446748b116e3a6
